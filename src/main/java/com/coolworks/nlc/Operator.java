@@ -16,21 +16,21 @@ enum Operator {
 		}
 	}, 
 	
-	SUBTRACT("-", 1, "subtract", "minus", "less") {
+	SUBTRACT("-", 2, "subtract", "minus", "less") {
 		@Override
 		public double apply(double operand1, double operand2) {
 			return operand1 - operand2;
 		}
 	}, 
 	
-	MULTIPLY("*", 2, "multiply-by", "times") {
+	MULTIPLY("*", 3, "multiply-by", "times") {
 		@Override
 		public double apply(double operand1, double operand2) {
 			return operand1 * operand2;
 		}
 	}, 
 	
-	DIVIDE("/", 2, "divide-by", "over") {
+	DIVIDE("/", 3, "divide-by", "over") {
 		@Override
 		public double apply(double operand1, double operand2) {
 			return operand1 / operand2;
