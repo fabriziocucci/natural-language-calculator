@@ -1,7 +1,9 @@
-package com.coolworks.nlc;
+package com.coolworks;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
+
+import com.coolworks.nlc.NaturalLanguageCalculator;
 
 public class EntryPoint {
 	
