@@ -9,6 +9,10 @@ import java.util.stream.Collectors;
 
 public class NaturalLanguageCalculator {
 	
+	private NaturalLanguageCalculator() {
+		super();
+	}
+
 	/**
 	 * It performs simple natural language calculations by:
 	 * <ol>
