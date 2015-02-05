@@ -30,7 +30,7 @@ enum Operator {
 		}
 	}, 
 	
-	DIVIDE("/", 3, "divide-by", "over") {
+	DIVIDE("/", 4, "divide-by", "over") {
 		@Override
 		public double apply(double operand1, double operand2) {
 			return operand1 / operand2;
@@ -43,8 +43,8 @@ enum Operator {
 	private static final Map<String, Operator> aliasToOperator = new HashMap<>(); 
 	static {
 		Arrays.stream(Operator.values()).forEach(operator -> {
-			operator.aliases.stream().forEach(operatorAlias -> {
-				aliasToOperator.put(operatorAlias, operator);
+			operator.aliases.stream().forEach(alias -> {
+				aliasToOperator.put(alias, operator);
 			});
 		});
 	}

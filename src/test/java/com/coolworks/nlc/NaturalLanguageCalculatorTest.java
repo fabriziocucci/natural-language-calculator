@@ -40,6 +40,11 @@ public class NaturalLanguageCalculatorTest {
 		double expectedResult6 = 1.78; 
 		assertEquals(expectedResult6, actualResult6, DELTA);
 		
+		String calculation7 = "two over four times two";
+		double actualResult7 = NaturalLanguageCalculator.performCalculation(calculation7);
+		double expectedResult7 = 1.0; 
+		assertEquals(expectedResult7, actualResult7, DELTA);
+		
 	}
 
 }
