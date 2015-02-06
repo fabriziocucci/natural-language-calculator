@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 enum Operator {
@@ -103,12 +104,7 @@ enum Operator {
 	 * @return the enum constant identified by its natural language alias
 	 */
 	public static Operator fromAlias(String operatorAlias) {
-		Operator operator = aliasToOperator.get(operatorAlias);
-		if (operator != null) {
-			return operator;
-		} else {
-			throw new IllegalArgumentException("Unable to find operator from alias" + operatorAlias);
-		}
+		return Optional.ofNullable(aliasToOperator.get(operatorAlias)).orElseThrow(() -> new IllegalArgumentException("Unable to find operator from alias" + operatorAlias));
 	}
 	
 	/**

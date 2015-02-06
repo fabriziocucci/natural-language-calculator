@@ -3,6 +3,7 @@ package com.coolworks.nlc;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 enum Number {
 	
@@ -45,12 +46,7 @@ enum Number {
 	 * @return the enum constant identified by its human readable string
 	 */
 	public static Number fromName(String numberName) {
-		Number number = nameToNumber.get(numberName);
-		if (number != null) {
-			return number;
-		} else {
-			throw new IllegalArgumentException("Unable to find number from name" + numberName);
-		}
+		return Optional.ofNullable(nameToNumber.get(numberName)).orElseThrow(() -> new IllegalArgumentException("Unable to find number from name" + numberName));
 	}
 	
 	/**
